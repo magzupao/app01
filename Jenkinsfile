@@ -52,14 +52,7 @@ node {
     stage('deploy') {
         echo "*********** detiene proceso 8082 "
         echo "fuser -k 8082/tcp"
-        echo "*********** copia el jar "
-        echo "cp /home/dev/.jenkins/workspace/app01/target/app01.jar  /home/dev/despliegesjhipster"                         
-        echo "*********** cambiamos directorio "
-        echo "cd /home/dev/despliegesjhipster"
-        echo "*********** listamos directorio "
-        sh "pwd"
-        sh "ls -l"
+        sh "app.sh"
         echo "*********** ejecutamos el jar "
-        sh "java -jar target/app01.jar --server.servlet.context-path=/app01"
     }    
 }
