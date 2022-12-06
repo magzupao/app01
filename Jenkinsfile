@@ -57,7 +57,7 @@ node {
         echo "*********** cambiamos directorio "
         sh "cd /home/dev/despliegesjhipster"
         echo "*********** listamos directorio "
-        sh "ls -l"
+        sh "pwd"
         echo "*********** ejecutamos el jar "
         sh "java -jar app01.jar --server.servlet.context-path=/app01"
     }    
