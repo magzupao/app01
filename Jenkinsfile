@@ -48,11 +48,5 @@ node {
         sh "./mvnw -ntp verify -P-webapp -Pprod -DskipTests"
         archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
     }
-    
-    stage('deploy') {
-        echo "*********** detiene proceso 8082 "
-        echo "fuser -k 8082/tcp"
-        sh "sh app.sh &"
-        echo "*********** ejecutamos el jar "
-    }    
+
 }
