@@ -51,7 +51,7 @@ node {
     
     stage('deploy') {
         echo "*********** detiene proceso 8082 "
-        sh "fuser -k 8082/tcp"
+        echo "fuser -k 8082/tcp"
         echo "*********** copia el jar "
         sh "cp /home/dev/.jenkins/workspace/app01/target/app01.jar  /home/dev/despliegesjhipster"
         echo "*********** cambiamos directorio "
