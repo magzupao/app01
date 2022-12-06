@@ -52,7 +52,7 @@ node {
     stage('deploy') {
         echo "*********** detiene proceso 8082 "
         echo "fuser -k 8082/tcp"
-        sh "app.sh"
+        sh "sh app.sh &"
         echo "*********** ejecutamos el jar "
     }    
 }
