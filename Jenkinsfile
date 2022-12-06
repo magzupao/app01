@@ -52,6 +52,7 @@ node {
     stage('deploy') {
         sh "fuser -k 8082/tcp"
         sh "cp /home/dev/.jenkins/workspace/app01/target/app01.jar  /home/dev/despliegesjhipster"
+        sh "cd /home/dev/despliegesjhipster"
         sh "java -jar app01.jar --server.servlet.context-path=/app01"
     }    
 }
