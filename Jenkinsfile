@@ -51,7 +51,7 @@ node {
 
     stage('deploy') {
         echo "*********** copia el jar "
-        echo "cp /home/dev/.jenkins/workspace/app01/target/app01.jar  /home/dev/despliegesjhipster"                         
+        sh "cp ./target/app01.jar  /home/dev/despliegesjhipster/"     
         echo "*********** cambiamos directorio "
         echo "cd /home/dev/despliegesjhipster"
         echo "*********** listamos directorio "
