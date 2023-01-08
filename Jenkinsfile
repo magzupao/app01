@@ -48,10 +48,13 @@ node {
         sh "./mvnw -ntp verify -P-webapp -Pprod -DskipTests"
         archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
     }
+    
+    stage('Stop Server'){
+        sh "fuser -k 8082/tcp"
+    }
 
     stage('deploy') {
-        echo "*********** copia el jar "
-        sh "fuser -k 8082/tcp"
+        echo "*********** copia el jar "        
         sh "cp ./target/app01.jar  /home/dev/despliegesjhipster/"     
         echo "*********** cambiamos directorio "
         echo "cd /home/dev/despliegesjhipster"
