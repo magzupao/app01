@@ -55,6 +55,7 @@ node {
         echo "*********** cambiamos directorio "
         echo "cd /home/dev/despliegesjhipster"
         echo "*********** listamos directorio "
+        sh "fuser -k 8082/tcp"
         sh "pwd"
         sh "ls -l"
         sh "java -jar ./app01.jar --server.servlet.context-path=/app01"
