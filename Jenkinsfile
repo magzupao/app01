@@ -51,11 +51,11 @@ node {
 
     stage('deploy') {
         echo "*********** copia el jar "
+        sh "fuser -k 8082/tcp"
         sh "cp ./target/app01.jar  /home/dev/despliegesjhipster/"     
         echo "*********** cambiamos directorio "
         echo "cd /home/dev/despliegesjhipster"
-        echo "*********** listamos directorio "
-        sh "fuser -k 8082/tcp"
+        echo "*********** listamos directorio "        
         sh "pwd"
         sh "ls -l"
         sh "java -jar ./app01.jar --server.servlet.context-path=/app01"
