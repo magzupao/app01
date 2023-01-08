@@ -55,7 +55,10 @@ node {
         echo "*********** copia el jar "        
         sh "cp ./target/app01.jar  /home/dev/despliegesjhipster/"     
         echo "*********** cambiamos directorio "
-        sh "cd /home/dev/despliegesjhipster"
+        sh "pwd"
+        dir('/home/dev/despliegesjhipster') {
+            sh "pwd"
+        }
         echo "*********** listamos directorio "        
         sh "pwd"
         sh "ls -l"
