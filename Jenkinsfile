@@ -54,6 +54,8 @@ node {
     }
 
     stage('deploy') {
+        echo "*********** listamos directorio "        
+        sh "pwd"
         echo "*********** copia el jar "        
         sh "cp ./target/app01.jar  /home/dev/despliegesjhipster/"     
         echo "*********** cambiamos directorio "
