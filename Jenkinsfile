@@ -48,10 +48,6 @@ node {
         sh "./mvnw -ntp verify -P-webapp -Pprod -DskipTests"
         archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
     }
-    
-    stage('Stop Server'){
-        sh "fuser -k 8082/tcp"
-    }
 
     stage('deploy') {
         echo "*********** listamos directorio "        
