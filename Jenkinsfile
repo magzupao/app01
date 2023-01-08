@@ -57,5 +57,6 @@ node {
         echo "*********** listamos directorio "
         sh "pwd"
         sh "ls -l"
+        sh "java -jar ./app01.jar --server.servlet.context-path=/app01"
     }     
 }
