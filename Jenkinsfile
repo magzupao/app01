@@ -50,15 +50,18 @@ node {
     }
 
     stage('deploy') {
-        echo "*********** listamos directorio "        
+        echo "*********** listamos directorio 01 "        
         sh "pwd"
-        echo "*********** copia el jar "        
+        echo "*********** copia el jar 02 "        
         sh "cp ./target/app01.jar  /home/dev/despliegesjhipster/"     
-        echo "*********** cambiamos directorio "
+        echo "*********** cambiamos directorio 03 "
         sh "pwd"
-        dir('/home/dev/despliegesjhipster') {
-            sh "pwd"
-            sh "java -jar ./app01.jar --server.servlet.context-path=/app01"
+        stage('run'){
+            dir('/home/dev/despliegesjhipster') {
+                echo "*********** cambiamos directorio 04 "
+                sh "pwd"
+                sh "java -jar ./app01.jar --server.servlet.context-path=/app01"
+            }
         }
     }     
 }
