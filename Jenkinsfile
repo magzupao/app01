@@ -60,6 +60,7 @@ node {
             dir('/home/dev/despliegesjhipster') {
                 echo "*********** cambiamos directorio 04 "
                 sh "pwd"
+                sh "ls -l"
                 sh "java -jar ./app01.jar --server.servlet.context-path=/app01 &"
             }
         }
