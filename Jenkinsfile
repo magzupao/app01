@@ -61,7 +61,7 @@ node {
                 echo "*********** cambiamos directorio 04 "
                 sh "pwd"
                 sh "ls -l"
-                sh "java -jar ./app01.jar --server.servlet.context-path=/app01 &"
+                sh "java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED -jar ./app01.jar --server.servlet.context-path=/app01 &"
             }
         }
     }     
