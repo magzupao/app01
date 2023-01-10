@@ -47,14 +47,5 @@ node {
     stage('packaging') {
         sh "./mvnw -ntp verify -P-webapp -Pprod -DskipTests"
         archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
-    }
-
-    stage('deploy') {
-        echo "*********** listamos directorio 01 "        
-        sh "pwd"
-        echo "*********** copia el jar 02 "        
-        sh "cp ./target/app01.jar  /home/dev/despliegesjhipster/"     
-        echo "*********** cambiamos directorio 03 "
-        sh "pwd"
-    }     
+    }  
 }
