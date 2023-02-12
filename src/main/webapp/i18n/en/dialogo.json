@@ -1,0 +1,26 @@
+{
+  "app01App": {
+    "dialogo": {
+      "home": {
+        "title": "Dialogos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Dialogo",
+        "createOrEditLabel": "Create or edit a Dialogo",
+        "notFound": "No Dialogos found"
+      },
+      "created": "A new Dialogo is created with identifier {{ param }}",
+      "updated": "A Dialogo is updated with identifier {{ param }}",
+      "deleted": "A Dialogo is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Dialogo {{ id }}?"
+      },
+      "detail": {
+        "title": "Dialogo"
+      },
+      "id": "ID",
+      "mensaje": "Mensaje",
+      "conversacion": "Conversacion",
+      "participante": "Participante"
+    }
+  }
+}

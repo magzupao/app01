@@ -1,0 +1,33 @@
+{
+  "applications": ["app01"],
+  "changelogDate": "20230212194906",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "dialogo",
+  "fields": [
+    {
+      "fieldName": "mensaje",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Dialogo",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "conversacion",
+      "otherEntityRelationshipName": "dialogo",
+      "relationshipName": "conversacion",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "participante",
+      "otherEntityRelationshipName": "dialogo",
+      "relationshipName": "participante",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

@@ -1,0 +1,43 @@
+{
+  "applications": ["app01"],
+  "changelogDate": "20230212194806",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "participante",
+  "fields": [
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nombre",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Participante",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "dialogo",
+      "otherEntityRelationshipName": "participante",
+      "relationshipName": "dialogo",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "recurso",
+      "otherEntityRelationshipName": "participante",
+      "relationshipName": "recurso",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "conversacion",
+      "otherEntityRelationshipName": "participante",
+      "relationshipName": "conversacion",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

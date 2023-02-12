@@ -1,0 +1,33 @@
+{
+  "applications": ["app01"],
+  "changelogDate": "20230212195006",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "recurso",
+  "fields": [
+    {
+      "fieldName": "fichero",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Recurso",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "conversacion",
+      "otherEntityRelationshipName": "recurso",
+      "relationshipName": "conversacion",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "participante",
+      "otherEntityRelationshipName": "recurso",
+      "relationshipName": "participante",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

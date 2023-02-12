@@ -1,0 +1,39 @@
+{
+  "applications": ["app01"],
+  "changelogDate": "20230212194706",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "conversacion",
+  "fields": [
+    {
+      "fieldName": "titulo",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Conversacion",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "participante",
+      "otherEntityRelationshipName": "conversacion",
+      "relationshipName": "participante",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "dialogo",
+      "otherEntityRelationshipName": "conversacion",
+      "relationshipName": "dialogo",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "recurso",
+      "otherEntityRelationshipName": "conversacion",
+      "relationshipName": "recurso",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

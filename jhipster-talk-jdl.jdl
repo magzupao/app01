@@ -1,0 +1,59 @@
+application {
+  config {
+    baseName app01
+    applicationType monolith
+    packageName com.source.app
+    authenticationType jwt
+    prodDatabaseType postgresql
+    clientFramework angularX
+  }
+  entities *
+}
+
+entity Conversacion {
+	titulo String
+}
+
+entity Participante {
+	email String,
+    nombre String
+}
+
+entity Dialogo {
+	mensaje String
+}
+
+entity Recurso {
+	fichero String
+}
+
+
+relationship OneToMany {
+	Conversacion to Participante
+}
+
+relationship OneToMany {
+	Conversacion to Dialogo
+}
+
+relationship OneToMany {
+	Participante to Dialogo
+}
+
+relationship OneToMany {
+	Conversacion to Recurso
+}
+
+relationship OneToMany {
+	Participante to Recurso
+}
+
+// Set pagination options
+paginate * with infinite-scroll
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

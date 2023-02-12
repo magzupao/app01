@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dialogo">
+      <h2 data-cy="dialogoDetailsHeading"><span jhiTranslate="app01App.dialogo.detail.title">Dialogo</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ dialogo.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="app01App.dialogo.mensaje">Mensaje</span></dt>
+        <dd>
+          <span>{{ dialogo.mensaje }}</span>
+        </dd>
+        <dt><span jhiTranslate="app01App.dialogo.conversacion">Conversacion</span></dt>
+        <dd>
+          <div *ngIf="dialogo.conversacion">
+            <a [routerLink]="['/conversacion', dialogo.conversacion.id, 'view']">{{ dialogo.conversacion.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="app01App.dialogo.participante">Participante</span></dt>
+        <dd>
+          <div *ngIf="dialogo.participante">
+            <a [routerLink]="['/participante', dialogo.participante.id, 'view']">{{ dialogo.participante.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/dialogo', dialogo.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="recurso">
+      <h2 data-cy="recursoDetailsHeading"><span jhiTranslate="app01App.recurso.detail.title">Recurso</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ recurso.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="app01App.recurso.fichero">Fichero</span></dt>
+        <dd>
+          <span>{{ recurso.fichero }}</span>
+        </dd>
+        <dt><span jhiTranslate="app01App.recurso.conversacion">Conversacion</span></dt>
+        <dd>
+          <div *ngIf="recurso.conversacion">
+            <a [routerLink]="['/conversacion', recurso.conversacion.id, 'view']">{{ recurso.conversacion.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="app01App.recurso.participante">Participante</span></dt>
+        <dd>
+          <div *ngIf="recurso.participante">
+            <a [routerLink]="['/participante', recurso.participante.id, 'view']">{{ recurso.participante.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/recurso', recurso.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
