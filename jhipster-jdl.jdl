@@ -1,0 +1,31 @@
+entity TIPOANEXO {
+    codigo Integer,
+    descripcion String,
+    fechaAlta LocalDate,
+    fechaBaja LocalDate,
+    nombreUsuarioModificacion String
+}
+
+entity TIPOELEMENTO {
+    codigo Integer,
+    nombre String
+}
+
+entity TIPOSUMINISTRO {
+    idTipoSuministro Integer,
+    nombre String
+}
+relationship OneToMany {
+  TIPOELEMENTO{tipoanexo} to TIPOANEXO{tipoelemento(codigo)}
+}
+
+relationship OneToMany {
+  TIPOSUMINISTRO{tipoanexo} to TIPOANEXO{tiposuministro(idTipoSuministro)}
+}
+
+dto all with mapstruct
+
+paginate TIPOANEXO, TIPOELEMENTO, TIPOSUMINISTRO with pagination
+service all with serviceClass
+
+
